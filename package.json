@@ -1,0 +1,24 @@
+{
+  "name": "handy-functions",
+  "version": "1.0.0",
+  "description": "UI Handbook HandyUI Functions",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deliberatedesign/functions.git"
+  },
+  "keywords": [
+    "uihandbook",
+    "handyui",
+    "functions"
+  ],
+  "author": "ui-handbook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uihandbook/handy-functions/issues"
+  },
+  "homepage": "https://github.com/uihandbook/handy-functions#readme"
+}
