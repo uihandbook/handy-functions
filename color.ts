@@ -1,25 +1,25 @@
 // Our colors are saved as HEX
 // We allow them to be converted to RGB so we can do CSS transisions
-const _hexToRgb = (hex: string) => {
+const _hexToRgb = (hex) => {
   const arr = hex
     .replace(
       /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
-      (_m: string, r: string, g: string, b: string) => '#' + r + r + g + g + b + b
+      (_m, r, g, b) => '#' + r + r + g + g + b + b
     )
     .substring(1)
     .match(/.{2}/g);
 
-  return arr ? arr.map((x: string) => x && parseInt(x, 16)) : null;
+  return arr ? arr.map((x) => x && parseInt(x, 16)) : null;
 };
 
 // Tint and Shade functions for js: https://stackoverflow.com/a/13542669
-const _logShade = (co: string, p: number) => {
+const _logShade = (co, p) => {
   const i = parseInt,
     r = Math.round,
     [a, b, c, d] = co.split(','),
-    P: boolean = p < 0,
+    P = p < 0,
     t = P ? 0 : p * 255 ** 2,
-    X: number = P ? 1 + p : 1 - p;
+    X = P ? 1 + p : 1 - p;
   return (
     'rgb' +
     (d ? 'a(' : '(') +
@@ -32,7 +32,7 @@ const _logShade = (co: string, p: number) => {
   );
 };
 
-const _logBlend = (p: number, c0: string, c1: string) => {
+const _logBlend = (p, c0, c1) => {
   const i = parseInt,
     r = Math.round,
     P = 1 - p,
@@ -58,29 +58,29 @@ const _logBlend = (p: number, c0: string, c1: string) => {
   );
 };
 
-export const rgba = (value: string, opacity = 1) => {
+export const rgba = (value, opacity = 1) => {
   const rgbValue = _hexToRgb(value);
   return `rgba(${rgbValue}, ${opacity})`;
 };
 
-export const tint = (color: string, percent: number) => {
+export const tint = (color, percent) => {
   const rgbValue = _hexToRgb(color);
   return _logShade(`rgb(${rgbValue})`, percent);
 };
 
-export const shade = (color: string, percent: number) => {
+export const shade = (color, percent) => {
   const rgbValue = _hexToRgb(color);
   return _logShade(`rgb(${rgbValue})`, Math.abs(percent) * -1);
 };
 
 // Blend 2 colors together for a solid mixed color
-export const mix = (color: string, color2: string, percent: number) => {
+export const mix = (color, color2, percent) => {
   const rgbValue = _hexToRgb(color);
   const rgbValue2 = _hexToRgb(color2);
   return _logBlend(percent, `rgb(${rgbValue})`, `rgb(${rgbValue2})`);
 };
 
-export const gradient = (startColor: string, endColor: string) => {
+export const gradient = (startColor, endColor) => {
   return `background: ${startColor};
     background: -moz-linear-gradient(45deg,  ${startColor} 0%, ${endColor} 100%);
     background: -webkit-linear-gradient(45deg,  ${startColor} 0%, ${endColor} 100%);
