@@ -1,6 +1,4 @@
-import { WithPadding } from "handy-types";
-
-export const getPadding = (padding: WithPadding['padding']) => {
+export const getPadding = (padding) => {
   if(!padding) {
     return null;
   }
@@ -16,6 +14,6 @@ export const getPadding = (padding: WithPadding['padding']) => {
       padding-bottom: ${paddingBottom};
       padding-left: ${paddingLeft};`;
   } else {
-    return `padding: ${padding}px;`;
+    return `padding: ${padding};`;
   }
 };

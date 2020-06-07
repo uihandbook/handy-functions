@@ -1,3 +1,3 @@
-export const toNegative = (number:number) => {
+export const toNegative = (number) => {
   return -Math.abs(number);
 };

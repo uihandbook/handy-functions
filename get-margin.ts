@@ -1,6 +1,4 @@
-import { WithMargin } from "handy-types";
-
-export const getMargin = (margin: WithMargin['margin']) => {
+export const getMargin = (margin) => {
   if(!margin) {
     return null;
   }
@@ -16,6 +14,6 @@ export const getMargin = (margin: WithMargin['margin']) => {
       margin-bottom: ${marginBottom};
       margin-left: ${marginLeft};`;
   } else {
-    return `margin: ${margin}px;`;
+    return `margin: ${margin};`;
   }
 };
