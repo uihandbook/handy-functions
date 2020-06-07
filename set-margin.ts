@@ -1,4 +1,4 @@
-export const getMargin = (margin) => {
+export const setMargin = (margin) => {
   if(!margin) {
     return null;
   }

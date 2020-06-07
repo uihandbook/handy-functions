@@ -1,4 +1,4 @@
-export const getPadding = (padding) => {
+export const setPadding = (padding) => {
   if(!padding) {
     return null;
   }
