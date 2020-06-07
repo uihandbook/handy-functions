@@ -4,10 +4,10 @@ export const setPosition = (position) => {
   }
 
   if(typeof position === 'object') {
-    const positionTop = position['top'] ? position['top'] : 0;
-    const positionRight = position['right'] ? position['right'] : 0;
-    const positionBottom = position['bottom'] ? position['bottom'] : 0;
-    const positionLeft = position['left'] ? position['left'] : 0;
+    const positionTop = position['top'] ? position['top'] : "auto";
+    const positionRight = position['right'] ? position['right'] : "auto";
+    const positionBottom = position['bottom'] ? position['bottom'] : "auto";
+    const positionLeft = position['left'] ? position['left'] : "auto";
 
     return `top: ${positionTop};
       right: ${positionRight};
