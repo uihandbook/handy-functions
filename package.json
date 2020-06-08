@@ -1,6 +1,6 @@
 {
-  "name": "handy-functions",
-  "version": "1.0.1",
+  "name": "@uihandbook/handy-functions",
+  "version": "0.0.1",
   "description": "UI Handbook HandyUI Functions",
   "main": "index.ts",
   "scripts": {
